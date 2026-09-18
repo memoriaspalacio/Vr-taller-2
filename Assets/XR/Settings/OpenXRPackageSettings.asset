@@ -398,7 +398,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 274c02963f889a64e90bc2e596e21d13, type: 3}
   m_Name: HTCViveControllerProfile Standalone
   m_EditorClassIdentifier: Unity.XR.OpenXR::UnityEngine.XR.OpenXR.Features.Interactions.HTCViveControllerProfile
-  m_enabled: 0
+  m_enabled: 1
   nameUi: HTC Vive Controller Profile
   version: 0.0.1
   featureIdInternal: com.unity.openxr.feature.input.htcvive
@@ -1339,7 +1339,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d28f705476c80d47acb3dfade3d3142, type: 3}
   m_Name: MetaXRFoveationFeature Standalone
   m_EditorClassIdentifier: Oculus.VR::Meta.XR.MetaXRFoveationFeature
-  m_enabled: 1
+  m_enabled: 0
   nameUi: Meta XR Foveation
   version: 1.0.0
   featureIdInternal: com.meta.openxr.feature.foveation
@@ -1577,7 +1577,9 @@ MonoBehaviour:
   m_Name: Standalone
   m_EditorClassIdentifier: Unity.XR.OpenXR::UnityEngine.XR.OpenXR.OpenXRSettings
   features:
+  - {fileID: -2349014118158531082}
   - {fileID: 403514490462926883}
+  - {fileID: -1111362317879218951}
   - {fileID: -1877999680407399926}
   - {fileID: -4785692772754116614}
   - {fileID: 8064763810911795150}
@@ -1600,14 +1602,12 @@ MonoBehaviour:
   - {fileID: -3393322030821325703}
   - {fileID: -8373762510605238371}
   - {fileID: 3437143324454881351}
+  - {fileID: -4651702275209180053}
   - {fileID: 8185772443334458791}
   - {fileID: -1852634888126360266}
   - {fileID: 7222132242069188204}
   - {fileID: -2996741718150028937}
   - {fileID: 4179591398917128043}
-  - {fileID: -2349014118158531082}
-  - {fileID: -1111362317879218951}
-  - {fileID: -4651702275209180053}
   customLoaderName: 
   m_renderMode: 1
   m_latencyOptimization: 0
@@ -2555,7 +2555,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1927c045052a06d49a9b21fdcaa26db6, type: 3}
   m_Name: MetaXRFeature Standalone
   m_EditorClassIdentifier: Oculus.VR::Meta.XR.MetaXRFeature
-  m_enabled: 1
+  m_enabled: 0
   nameUi: Meta XR Feature
   version: 0.0.1
   featureIdInternal: com.meta.openxr.feature.metaxr

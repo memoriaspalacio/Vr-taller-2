@@ -27,14 +27,14 @@ public class ContadorLlaves : MonoBehaviour
 
     public void SumarPuntaje(int valor)
     {
-        if(_llaves < 3)
+        if(_llaves < 1)
         {
             _llaves += valor;
 
             _llavesText.text = "" + _llaves + "/3";
         }
 
-        if(_llaves == 3)
+        if(_llaves == 1)
         {
             animPuerta.SetBool("onOpen", true);
             exitBackroom.SetActive(true);

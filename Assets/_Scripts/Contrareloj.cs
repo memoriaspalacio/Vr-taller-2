@@ -32,6 +32,8 @@ public class Cronometro : MonoBehaviour
 
     [SerializeField] private LayerMask sueloMask = ~0; // por defecto, todo
 
+    [SerializeField] private GameObject entityCollider;
+
     protected void Awake()
     {
         tiempoRestante = tiempoInicial;
@@ -44,6 +46,7 @@ public class Cronometro : MonoBehaviour
     protected void Start()
     {
         StartCoroutine(CronometroCoroutine());
+        entityCollider.SetActive(false);
     }
 
     private IEnumerator CronometroCoroutine()
@@ -72,33 +75,7 @@ public class Cronometro : MonoBehaviour
 
     private void SpawnFrenteCharacter()
     {
-        OcultarContenedores();
-
-        if (prefabAparecer == null || character == null)
-        {
-            Debug.LogWarning("Falta asignar el prefabAparecer o el character en el inspector.");
-            return;
-        }
-
-        // Posición base: frente al character según su forward
-        Vector3 pos = character.position + character.forward * distanciaFrente;
-        pos.y += alturaOffset;
-
-        // Opcional: alinearlo con el suelo
-        if (alinearAlSuelo)
-        {
-            // Tira un raycast hacia abajo desde un poco más alto por seguridad
-            Vector3 origen = pos + Vector3.up * 2f;
-            if (Physics.Raycast(origen, Vector3.down, out RaycastHit hit, 10f, sueloMask, QueryTriggerInteraction.Ignore))
-            {
-                pos = hit.point;
-            }
-        }
-
-        // Rotación: mirando en la misma dirección que el character
-        Quaternion rot = Quaternion.LookRotation(character.forward, Vector3.up);
-
-        Instantiate(prefabAparecer, pos, rot);
+        entityCollider.SetActive(true);
     }
 
     private void OcultarContenedores()
